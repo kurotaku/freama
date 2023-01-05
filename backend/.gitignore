@@ -1,0 +1,10 @@
+# log
+yarn-error.log
+
+# node modules
+node_modules
+
+# env
+.env
+
+.DS_Store
