@@ -2,6 +2,7 @@ import express from "express";
 const app: express.Express = express();
 const port = process.env.PORT || 8000;
 import db from "../models";
+import router from '../router'
 
 db.sequelize.sync().then(() => {
   try {
@@ -14,17 +15,5 @@ db.sequelize.sync().then(() => {
   }
 });
 
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Hello, world!");
-});
-
-app.get("/users", async (req: express.Request, res: express.Response): Promise<void> => {
-  await db.User.findAll({
-    attributes: {
-      exclude: ['password']
-    }
-    // include: {
-    //     model: db.Project
-    // }
-  }).then((result: object) => res.json(result)).catch((err: object) => console.error(err));
-});
+app.use("/", router);
+app.use("/users", router);
