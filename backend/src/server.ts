@@ -4,9 +4,11 @@ const port = process.env.PORT || 8000;
 import db from "../models";
 import router from '../router'
 
+app.set('view engine', 'ejs');
+
 db.sequelize.sync().then(() => {
   try {
-    app.listen(8000, () => {
+    app.listen(port, () => {
       console.log(`port ${port} でサーバー起動中`);
     });
   } catch (error) {

@@ -4,7 +4,9 @@ import db from "../models";
 const router = express.Router();
 
 router.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Hello, world!");
+  res.render('index', {
+    message: 'トップページです'
+  });
 });
 
 router.get("/users", async (req: express.Request, res: express.Response): Promise<void> => {
