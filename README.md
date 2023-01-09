@@ -1,4 +1,7 @@
+
+
 # Backend
+
 
 ## Mysql
 
@@ -12,10 +15,20 @@ mysqld -D --datadir=/Users/kurotaku/projects/mysql_data
 ### Mysql Sutdown
 mysqladmin -u root shutdown 
 
+## Run
+
+```
+yarn run dev
+```
+
 
 ## Sequelize
 
 ### Samples
+
+```
+yarn sequelize-cli db:migrate:undo:all
+```
 
 ```
 yarn sequelize-cli model:generate --name User --attributes name:string,email:string,emailVerifiedAt:date,password:string

@@ -5,5 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
+
+<div class="flashes">
+  <% if (flashMessages) { %>
+    <% if (flashMessages.success) { %>
+      <div class="flash success">
+        <%= flashMessages.success %>
+      </div>
+    <% } else if (flashMessages.error) { %>
+      <div class="flash error">
+        <%= flashMessages.error %>
+      </div>
+    <% } %>
+  <% } %>
+</div>

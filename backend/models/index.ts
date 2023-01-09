@@ -5,7 +5,7 @@ import path from 'path'
 const env = process.env.NODE_ENV || 'development';
 import { Sequelize, DataTypes } from 'sequelize';
 
-const config = require(__dirname + '/../config/config.js')[env];
+const config = require(__dirname + './../config/config.js')[env];
 const sequelize: any = new Sequelize(config.database, config.username, config.password, config);
 
 // current file basename
