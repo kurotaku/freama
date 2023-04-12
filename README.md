@@ -7,6 +7,7 @@
 
 ### Mysql Setsup
 mysqld --initialize-insecure --datadir=/Users/kurotaku/projects/mysql_data
+
 mysql_ssl_rsa_setup --datadir=/Users/kurotaku/projects/mysql_data
 
 ### Mysql Running
